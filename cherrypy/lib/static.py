@@ -380,7 +380,8 @@ def staticdir(section, dir, root='', match='', content_types=None, index='',
             if abs_index:
                 handled = _attempt(os.path.join(dir, index), content_types)
             else:
-                handled = _attempt(os.path.join(filename, index), content_types)
+                handled = _attempt(
+                    os.path.join(filename, index), content_types)
             if handled:
                 request.is_index = filename[-1] in (r'\/')
     return handled

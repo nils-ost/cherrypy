@@ -274,7 +274,8 @@ class StaticTest(helper.CPWebCase):
         # also deeper path's shouldn't work
         self.getPage('/docroot/some/even/deeper/path/')
         self.assertStatus(404)
-        # but with "staticdir.abs_index" set to True all subpath's should fall back to "staticdir.dir"'s index
+        # but with "staticdir.abs_index" set to True all subpath's should
+        # fall back to "staticdir.dir"'s index
         self.getPage('/docrootabs/somepath/')
         self.assertStatus('200 OK')
         self.assertBody('Hello, world\r\n')
